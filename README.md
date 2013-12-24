@@ -89,7 +89,7 @@ c
 
 ```
 
-Now we can use this dsl file with goldendict
+Now we can use this dsl file with goldendict, this is how it would look
 
-
+![] (http://s2.postimg.org/ms86hgjqx/Screenshot_from_2013_12_24_12_43_23.png)
 
