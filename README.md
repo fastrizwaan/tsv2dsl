@@ -31,9 +31,17 @@ a	n.	one, 1 <- this is data
 And the data (in file say data.txt) is like this:
 
 ```
-a	n.	one, 1
-b	n.	two, 2
-c	noun	3, three	
+a	n.	apple
+a	v.	admire
+a	adj.	alive
+a	n.	ark
+a	v.	affirm
+a	adj.	ample
+c	v.	cover
+c	n.	cat
+c	n.	cow
+c	adj.	cute
+c	adj.	capable
 ```
 there is a tab between "a" and "n." and "one, 1"
 
