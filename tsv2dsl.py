@@ -25,7 +25,7 @@
 #--- How this procedural program work: ---#
 #1. Open a UTF-8 text file with Tab separated values
 #2. Check for proper header in the text file 
-#3. If No Header is provided - create, else report error
+#3. If No Header is provided request to add header
 #4. Data manipulation:
     #1. Use the 1st tab separated value as word
     #2. Use the 2nd tab separated value as Part of speech (verb, adj, etc.)
@@ -74,6 +74,8 @@ except IOError:
 #-- Reading Data --#
 
 #-- Check for Header --#
+# The header is in the first 3 lines
+
 for x in range(3):
     line = file.readline()
     if line.startswith('#'):
@@ -105,7 +107,7 @@ if contentsLanguage == "":
 # 
 if dictionaryName == "" or indexLanguage == "" or contentsLanguage == "":
     print(os.linesep)
-    print("Add a Header of to the top of data tsv file:", sys.argv[1])
+    print("Add a Header of to the top of data tsv file:", fileName)
     print('-'*50)
     print('#NAME "My New Dictionary English - Hindi"')
     print('#INDEX_LANGUAGE "english"')
