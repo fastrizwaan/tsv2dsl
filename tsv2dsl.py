@@ -57,7 +57,6 @@ contentsLanguage = ""
 try:
     fileName         = str(sys.argv[1])
     file = codecs.open(fileName, "rb", encoding='UTF-8')
-    print(os.linesep)
     print("Info : Opening:", fileName)
 
 except IndexError:
