@@ -1,0 +1,16 @@
+#NAME "My Fruits Dictionary"
+#INDEX_LANGUAGE "alphabets"
+#CONTENTS_LANGUAGE "fruits"
+
+a	n.	apple
+b	n.	banana
+p	n.	pear
+j	n.	jackfruit
+b	n.	berry
+b	n.	blueberry
+g	n.	grape
+g	n.	guava
+r	n.	raspberry
+c	n.	cranberry
+p	n.	pineapple
+s	n.	strawberry

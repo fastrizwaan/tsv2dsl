@@ -1,0 +1,10 @@
+#NAME "My Numbers Dictionary"
+#INDEX_LANGUAGE "numbers"
+#CONTENTS_LANGUAGE "english"
+
+1	n.	one
+2	n.	two
+3	n.	three	
+4	n.	four
+5	n.	five
+
