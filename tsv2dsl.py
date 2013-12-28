@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#  tsv2dsl.py v. 1.0
+#  tsv2dsl.py v. 1.1
 #  
 #  Copyright 2013 Asif Ali Rizvan <fast.rizwaan@gmail.com>
 #  
@@ -47,7 +47,6 @@ import codecs
 import datetime
 
 #-- Variables --#
-fileName         = str(sys.argv[1])
 maindict         = {} #using dictionary datatype
 today            = str(datetime.date.today())
 dictionaryName   = ""
@@ -56,9 +55,10 @@ contentsLanguage = ""
 
 #-- File opening process --#
 try:
-    print("Info : Opening:", fileName)
+    fileName         = str(sys.argv[1])
     file = codecs.open(fileName, "rb", encoding='UTF-8')
-    
+    print(os.linesep)
+    print("Info : Opening:", fileName)
 
 except IndexError:
     print("Error: Please provide filename as argument")
@@ -93,6 +93,7 @@ for x in range(3):
         contentsLanguage=contentsLanguage.strip('"')
         print("Info : Contents Language:",contentsLanguage)
         
+        
 #-- Report what is missing in the Header --#
 if dictionaryName == "":
     print("Error: Missing: Dictionary name")
@@ -103,15 +104,13 @@ if contentsLanguage == "":
 
 # 
 if dictionaryName == "" or indexLanguage == "" or contentsLanguage == "":
-    print(line)
+    print(os.linesep)
     print("Add a Header of to the top of data tsv file:", sys.argv[1])
     print('-'*50)
     print('#NAME "My New Dictionary English - Hindi"')
     print('#INDEX_LANGUAGE "english"')
     print('#CONTENTS_LANGUAGE "hindi"')
     print("                     <- observe! 1 empty line before data!")
-    print("cabal   n.      कपट  <- data starts here")
-    print("good    a.      अच्छा <- data here")
     print('-'*50)
     file.close()    #better to close file before exiting
     sys.exit(2) # Give error and exit
@@ -183,6 +182,8 @@ for line in file:
     word=word.strip()   
     pos=pos.strip()
     mean=mean.strip()
+    #replace comma (,) with %comma% so that splitting in last part doesn't mess up 
+    mean=mean.replace(',','%comma%')
    
     #-- Check if a word already exists in the data dictionary in memory --#
        
@@ -233,6 +234,8 @@ for word in wordList1:
 
         for meanings in meanArray:
             
+            #replace %comma% to  comma (,) again after the split in the previous for loop
+            meanings=meanings.replace('%comma%', ',')
             #print ("\t"+"[m2]"+"[b]"+str(count)+"."+"[/b]"+" "+"[trn]"+meanings+"[/trn][/m]")
             meanwrite="\t"+"[m2]"+"[b]"+str(count)+"."+"[/b]"+" "+"[trn]"+meanings+"[/trn][/m]"
             dslFile.write(meanwrite)
@@ -242,5 +245,5 @@ for word in wordList1:
 
 #-- Close files --#
 dslFile.close()     # close output file
-file.close()    # close input file
+file.close()        # close input file
 

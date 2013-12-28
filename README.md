@@ -12,7 +12,7 @@ Here's an example Tab separated text file which can be converted to DSL format f
 ```
 #NAME "My New Dictionary"
 #INDEX_LANGUAGE "english"
-#CONTENTS_LANGUAGE "hindi"
+#CONTENTS_LANGUAGE "numbers"
 
 a	n.	one, 1
 b	n.	two, 2
@@ -57,32 +57,40 @@ python3 tsv2dsl.py data.txt
 
 and you'll get:
 ```
-2013-12-24-122605-512833
+bash-4.2$ ./tsv2dsl.py data.txt 
+
+
+Info : Opening: data.txt
+Info : Dictionary Name  : My New Dictionary
+Info : Index Language   : English
+Info : Contents Language: Hindi
+Info : Creating: data.txt_En-Hi_2013-12-28.dsl
+
 ```
 
 To see the dictionary
 ```
-bash-4.2$ cat data.txt-2013-12-24-122605-512833-forward.dsl 
+bash-4.2$ cat data.txt_En-Hi_2013-12-28.dsl
 #NAME "My New Dictionary [En-Hi]"
 #INDEX_LANGUAGE "English"
 #CONTENTS_LANGUAGE "Hindi"
 
 a
-	[m1][p]v.[/p][/m]
-	[m2][b]1.[/b] [trn]admire[/trn][/m]
-	[m2][b]2.[/b] [trn]affirm[/trn][/m]
 	[m1][p]n.[/p][/m]
 	[m2][b]1.[/b] [trn]apple[/trn][/m]
 	[m2][b]2.[/b] [trn]ark[/trn][/m]
+	[m1][p]v.[/p][/m]
+	[m2][b]1.[/b] [trn]admire[/trn][/m]
+	[m2][b]2.[/b] [trn]affirm[/trn][/m]
 	[m1][p]adj.[/p][/m]
 	[m2][b]1.[/b] [trn]alive[/trn][/m]
 	[m2][b]2.[/b] [trn]ample[/trn][/m]
 c
+	[m1][p]v.[/p][/m]
+	[m2][b]1.[/b] [trn]cover[/trn][/m]
 	[m1][p]n.[/p][/m]
 	[m2][b]1.[/b] [trn]cat[/trn][/m]
 	[m2][b]2.[/b] [trn]cow[/trn][/m]
-	[m1][p]v.[/p][/m]
-	[m2][b]1.[/b] [trn]cover[/trn][/m]
 	[m1][p]adj.[/p][/m]
 	[m2][b]1.[/b] [trn]capable[/trn][/m]
 	[m2][b]2.[/b] [trn]cute[/trn][/m]
