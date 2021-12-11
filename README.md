@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/fastrizwaan)
+
 tsv2dsl
 =======
 (C) GPLv3 Mohammed Asif Ali Rizvan <fast.rizwaan@gmail.com>
